@@ -1,0 +1,1040 @@
+---- sleep Matches (1039 in 84 files) ----
+Bem_main.c (e:\cf\work\ble\ble-cc254_9_46\projects\ble\util\bem\app):static void halSleepExec(void);
+Bem_main.c (e:\cf\work\ble\ble-cc254_9_46\projects\ble\util\bem\app): * @fn          halSleepExec
+Bem_main.c (e:\cf\work\ble\ble-cc254_9_46\projects\ble\util\bem\app): * @brief       This function puts the CC254x to sleep by writing to the PCON register.
+Bem_main.c (e:\cf\work\ble\ble-cc254_9_46\projects\ble\util\bem\app):static void halSleepExec(void)
+Bem_main.c (e:\cf\work\ble\ble-cc254_9_46\projects\ble\util\bem\app):  SLEEPCMD |= 0x03;    // PM3, All clock oscillators off, voltage regulator off.
+Bem_main.c (e:\cf\work\ble\ble-cc254_9_46\projects\ble\util\bem\app):  halSleepExec();
+Bim_main.c (e:\cf\work\ble\ble-cc254_9_46\projects\ble\util\bim\app):void halSleepExec(void);
+Bim_main.c (e:\cf\work\ble\ble-cc254_9_46\projects\ble\util\bim\app): * @fn          halSleepExec
+Bim_main.c (e:\cf\work\ble\ble-cc254_9_46\projects\ble\util\bim\app): * @brief       This function puts the CC254x to sleep by writing to the PCON register.
+Bim_main.c (e:\cf\work\ble\ble-cc254_9_46\projects\ble\util\bim\app):void halSleepExec(void)
+Bim_main.c (e:\cf\work\ble\ble-cc254_9_46\projects\ble\util\bim\app):  SLEEPCMD |= 0x03;  // PM3, All clock oscillators off, voltage regulator off.
+Bim_main.c (e:\cf\work\ble\ble-cc254_9_46\projects\ble\util\bim\app):  halSleepExec();
+Bma250.h (e:\cf\work\ble\ble-cc254_9_46\projects\ble\keyfob\source):#define ACC_PM                      0x11    // Susp[7], Low_power[6], sleep_dur[4:1]
+Bma250.h (e:\cf\work\ble\ble-cc254_9_46\projects\ble\keyfob\source):#define ACC_PM_SLEEP_10MS           0x14
+Bma250.h (e:\cf\work\ble\ble-cc254_9_46\projects\ble\keyfob\source):#define ACC_PM_SLEEP_25MS           0x16
+Bma250.h (e:\cf\work\ble\ble-cc254_9_46\projects\ble\keyfob\source):#define ACC_PM_SLEEP_50MS           0x18
+Hal_board_cfg.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):/* Sleep Clock */
+Hal_board_cfg.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):  SLEEPCMD &= ~OSC_PD;            /* start 16MHz RCOSC & 32MHz XOSC */         \
+Hal_board_cfg.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):  while (!(SLEEPSTA & XOSC_STB)); /* wait for stable 32MHz XOSC */             \
+Hal_board_cfg.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):  SLEEPCMD |= OSC_PD;             /* stop 16MHz RCOSC */                       \
+Hal_board_cfg.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):/* Sleep Clock */
+Hal_board_cfg.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):  SLEEPCMD &= ~OSC_PD;            /* start 16MHz RCOSC & 32MHz XOSC */         \
+Hal_board_cfg.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):  while (!(SLEEPSTA & XOSC_STB)); /* wait for stable 32MHz XOSC */             \
+Hal_board_cfg.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):  SLEEPCMD |= OSC_PD;             /* stop 16MHz RCOSC */                       \
+Hal_board_cfg.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st): * never get used since device does not ever go to sleep. By forcing
+Hal_board_cfg.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):  SLEEPCMD &= ~OSC_PD;            /* start 16MHz RCOSC & 32MHz XOSC */         \
+Hal_board_cfg.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):  while (!(SLEEPSTA & XOSC_STB)); /* wait for stable 32MHz XOSC */             \
+Hal_board_cfg.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):  SLEEPCMD |= OSC_PD;             /* stop 16MHz RCOSC */                       \
+Hal_dma.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):  CLEAR_SLEEP_MODE();
+Hal_dma.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):  CLEAR_SLEEP_MODE();
+Hal_dma.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):  CLEAR_SLEEP_MODE();
+Hal_dma.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):#define HAL_DMA_TRIG_ST            11   /* Sleep Timer compare. */
+Hal_dma.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):#define HAL_DMA_TRIG_ST            11   /* Sleep Timer compare. */
+Hal_dma.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):#define HAL_DMA_TRIG_ST            11   /* Sleep Timer compare. */
+Hal_dma.h (e:\cf\work\ble\ble-cc254_9_46\projects\ble\util\ubl\soc_8051\usb_msd\hal):#define HAL_DMA_TRIG_ST            11   /* Sleep Timer compare. */
+Hal_drivers.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\common):#include "hal_sleep.h"
+Hal_drivers.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\common):  if ( events & HAL_SLEEP_TIMER_EVENT )
+Hal_drivers.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\common):    halRestoreSleepLevel();
+Hal_drivers.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\common):    return events ^ HAL_SLEEP_TIMER_EVENT;
+Hal_drivers.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\common):  /* Allow sleep before the next OSAL event loop */
+Hal_drivers.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\common):  ALLOW_SLEEP_MODE();
+Hal_drivers.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):#include "hal_sleep.h"
+Hal_drivers.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):  HalLedEnterSleep();
+Hal_drivers.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):  HalKeyEnterSleep();
+Hal_drivers.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):  HalI2CEnterSleep();
+Hal_drivers.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):  HalLedExitSleep();
+Hal_drivers.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):  HalKeyExitSleep();
+Hal_drivers.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):  HalI2CExitSleep();
+Hal_drivers.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\include):#define HAL_SLEEP_TIMER_EVENT               0x0004
+Hal_drivers.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):#define HAL_SLEEP_TIMER_EVENT                   0x00400
+Hal_gyro.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):#define PWR_MGM_SLEEP 0x40
+Hal_gyro.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):static void gyroSleep( void );
+Hal_gyro.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):  /* Take gyro out of sleep mode */
+Hal_gyro.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):    /* No callback, so just put gyro in sleep mode */
+Hal_gyro.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):    gyroSleep();
+Hal_gyro.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):  /* All we need to do is put gyro to sleep */
+Hal_gyro.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):    gyroSleep();
+Hal_gyro.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc): * @fn          gyroSleep
+Hal_gyro.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc): * @brief       This function puts the gyro in sleep mode.
+Hal_gyro.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):static void gyroSleep( void )
+Hal_gyro.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):  /* All we need to do is put gyro to sleep */
+Hal_gyro.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):  uint8 reg = PWR_MGM_SLEEP | PWR_MGM_STBY_XG | PWR_MGM_STBY_YG | PWR_MGM_STBY_ZG;
+Hal_gyro.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc): * @brief       This function takes the gyro out of sleep mode.
+Hal_gyro.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):  /* Clear SLEEP bit and place gyros in active mode */
+Hal_gyro.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):#define HAL_GYRO_PWR_MGM_SLEEP                  0x40
+Hal_gyro.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):  // Wake up from sleep, disable standby for all gyros, select reference PLL according to selected axes
+Hal_gyro.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):  cfgOn = mDisabledAxes & (~HAL_GYRO_PWR_MGM_SLEEP | clk_select);
+Hal_gyro.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):  val = HAL_GYRO_PWR_MGM_SLEEP;
+Hal_gyro.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):  // Put gyro back to sleep
+Hal_gyro.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):  val = HAL_GYRO_PWR_MGM_SLEEP;
+Hal_gyro.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):  mStatus = HAL_GYRO_SLEEP;
+Hal_gyro.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):#define HAL_GYRO_SLEEP                  0x01
+Hal_i2c.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc): * @fn          HalI2CReady2Sleep
+Hal_i2c.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc): * @brief       Determine whether the I2C is ready to sleep.
+Hal_i2c.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc): * @return      1 if the I2C is ready to sleep; 0 otherwise.
+Hal_i2c.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):uint8 HalI2CReady2Sleep(void)
+Hal_i2c.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc): * @fn          HalI2CEnterSleep
+Hal_i2c.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):void HalI2CEnterSleep(void)
+Hal_i2c.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc): * @fn          HalI2CExitSleep
+Hal_i2c.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):void HalI2CExitSleep(void)
+Hal_i2c.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):uint8 HalI2CReady2Sleep(void);
+Hal_i2c.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):void HalI2CEnterSleep(void);
+Hal_i2c.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):void HalI2CExitSleep(void);
+Hal_irtemp.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):  TMP006_OFF,               // IR Temperature Sleeping
+Hal_key.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):    /* Do this only after the hal_key is configured - to work with sleep stuff */
+Hal_key.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb): * @fn      HalKeyEnterSleep
+Hal_key.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb): * @brief  - Get called to enter sleep mode
+Hal_key.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):void HalKeyEnterSleep ( void )
+Hal_key.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb): * @fn      HalKeyExitSleep
+Hal_key.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb): * @brief   - Get called when sleep is over
+Hal_key.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):uint8 HalKeyExitSleep ( void )
+Hal_key.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):  CLEAR_SLEEP_MODE();
+Hal_key.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):  CLEAR_SLEEP_MODE();
+Hal_key.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb): * @fn      HalKeyEnterSleep
+Hal_key.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb): * @brief  - Get called to enter sleep mode
+Hal_key.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):void HalKeyEnterSleep ( void )
+Hal_key.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb): * @fn      HalKeyExitSleep
+Hal_key.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb): * @brief   - Get called when sleep is over
+Hal_key.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):uint8 HalKeyExitSleep ( void )
+Hal_key.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):  CLEAR_SLEEP_MODE();
+Hal_key.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):#include "hal_sleep.h"
+Hal_key.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):    /* Do this only after the hal_key is configured - to work with sleep stuff */
+Hal_key.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):  halSleepWait( 50 );
+Hal_key.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc): * @fn      HalKeyEnterSleep
+Hal_key.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc): * @brief  - Get called to enter sleep mode
+Hal_key.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):void HalKeyEnterSleep ( void )
+Hal_key.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):  /* Sleep!!!
+Hal_key.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc): * @fn      HalKeyExitSleep
+Hal_key.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc): * @brief   - Get called when sleep is over
+Hal_key.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):uint8 HalKeyExitSleep ( void )
+Hal_key.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):   * which is no longer compatible with hal_sleep.c module.
+Hal_key.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\include): * Enter sleep mode, store important values
+Hal_key.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\include):extern void HalKeyEnterSleep ( void );
+Hal_key.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\include): * Exit sleep mode, retore values
+Hal_key.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\include):extern uint8 HalKeyExitSleep ( void );
+Hal_key.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\include): * This is for internal used by hal_sleep
+Hal_keys.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):    /* Do this only after the hal_key is configured - to work with sleep stuff */
+Hal_keys.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):* @fn      HalKeyEnterSleep
+Hal_keys.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):* @brief  - Get called to enter sleep mode
+Hal_keys.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):void HalKeyEnterSleep ( void )
+Hal_keys.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):* @fn      HalKeyExitSleep
+Hal_keys.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):* @brief   - Get called when sleep is over
+Hal_keys.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):uint8 HalKeyExitSleep ( void )
+Hal_keys.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st): * Enter sleep mode, store important values
+Hal_keys.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):extern void HalKeyEnterSleep ( void );
+Hal_keys.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st): * Exit sleep mode, retore values
+Hal_keys.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):extern uint8 HalKeyExitSleep ( void );
+Hal_keys.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st): * This is for internal used by hal_sleep
+Hal_led.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):  uint8           sleepActive;
+Hal_led.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):static uint8 HalSleepLedState;         // LED state at last set/clr/blink update
+Hal_led.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):  HalLedStatusControl.sleepActive = FALSE;  // Initialize sleepActive to FALSE.
+Hal_led.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):  /* Check if sleep is active or not */
+Hal_led.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):  if (!HalLedStatusControl.sleepActive)
+Hal_led.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb): * @fn      HalLedEnterSleep
+Hal_led.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb): * @brief   Store current LEDs state before sleep
+Hal_led.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):void HalLedEnterSleep( void )
+Hal_led.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):  /* Sleep ON */
+Hal_led.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):  HalLedStatusControl.sleepActive = TRUE;
+Hal_led.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):  HalSleepLedState = 0;
+Hal_led.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):  HalSleepLedState |= HAL_STATE_LED1();
+Hal_led.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):  HalSleepLedState |= HAL_STATE_LED2() << 1;
+Hal_led.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):  HalSleepLedState |= HAL_STATE_LED3() << 2;
+Hal_led.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):  HalSleepLedState |= HAL_STATE_LED4() << 3;
+Hal_led.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb): * @fn      HalLedExitSleep
+Hal_led.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb): * @brief   Restore current LEDs state after sleep
+Hal_led.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):void HalLedExitSleep( void )
+Hal_led.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):  HalLedOnOff(HalSleepLedState, HAL_LED_MODE_ON);
+Hal_led.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):  /* Sleep OFF */
+Hal_led.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):  HalLedStatusControl.sleepActive = FALSE;
+Hal_led.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):  uint8           sleepActive;
+Hal_led.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):static uint8 HalSleepLedState;         // LED state at last set/clr/blink update
+Hal_led.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):  HalLedStatusControl.sleepActive = FALSE;  // Initialize sleepActive to FALSE.
+Hal_led.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):  /* Check if sleep is active or not */
+Hal_led.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):  if (!HalLedStatusControl.sleepActive)
+Hal_led.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb): * @fn      HalLedEnterSleep
+Hal_led.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb): * @brief   Store current LEDs state before sleep
+Hal_led.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):void HalLedEnterSleep( void )
+Hal_led.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):  /* Sleep ON */
+Hal_led.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):  HalLedStatusControl.sleepActive = TRUE;
+Hal_led.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):  HalSleepLedState = 0;
+Hal_led.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):  HalSleepLedState |= HAL_STATE_LED1();
+Hal_led.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):  HalSleepLedState |= HAL_STATE_LED2() << 1;
+Hal_led.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):  HalSleepLedState |= HAL_STATE_LED3() << 2;
+Hal_led.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):  HalSleepLedState |= HAL_STATE_LED4() << 3;
+Hal_led.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb): * @fn      HalLedExitSleep
+Hal_led.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb): * @brief   Restore current LEDs state after sleep
+Hal_led.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):void HalLedExitSleep( void )
+Hal_led.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):  HalLedOnOff(HalSleepLedState, HAL_LED_MODE_ON);
+Hal_led.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):  /* Sleep OFF */
+Hal_led.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):  HalLedStatusControl.sleepActive = FALSE;
+Hal_led.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):  uint8           sleepActive;
+Hal_led.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):static uint8 HalSleepLedState;         // LED state at last set/clr/blink update
+Hal_led.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):  /* Initialize sleepActive to FALSE */
+Hal_led.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):  HalLedStatusControl.sleepActive = FALSE;
+Hal_led.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):  /* Check if sleep is active or not */
+Hal_led.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):  if (!HalLedStatusControl.sleepActive)
+Hal_led.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st): * @fn      HalLedEnterSleep
+Hal_led.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st): * @brief   Store current LEDs state before sleep
+Hal_led.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):void HalLedEnterSleep( void )
+Hal_led.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):  /* Sleep ON */
+Hal_led.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):  HalLedStatusControl.sleepActive = TRUE;
+Hal_led.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):  HalSleepLedState = 0;
+Hal_led.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):  HalSleepLedState |= HAL_STATE_LED1();
+Hal_led.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):  HalSleepLedState |= HAL_STATE_LED2() << 1;
+Hal_led.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st): * @fn      HalLedExitSleep
+Hal_led.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st): * @brief   Restore current LEDs state after sleep
+Hal_led.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):void HalLedExitSleep( void )
+Hal_led.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):  HalLedOnOff(HalSleepLedState, HAL_LED_MODE_ON);
+Hal_led.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):  /* Sleep OFF */
+Hal_led.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):  HalLedStatusControl.sleepActive = FALSE;
+Hal_led.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\include): * Put LEDs in sleep state - store current values
+Hal_led.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\include):extern void HalLedEnterSleep( void );
+Hal_led.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\include): * Retore LEDs from sleep state
+Hal_led.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\include):extern void HalLedExitSleep( void );
+Hal_mag.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):    MAG3110_OFF,          // Magnetometer Sleeping
+Hal_mcu.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb): *                                        CC2540 sleep common code
+Hal_mcu.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):#define PCON_IDLE  BV(0)            /* Writing 1 to force CC2540 to enter sleep mode */
+Hal_mcu.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):/* SLEEPCMD bit definitions */
+Hal_mcu.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):/* SLEEPSTA bit definitions */
+Hal_mcu.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):/* SLEEPCMD and SLEEPSTA bit definitions */
+Hal_mcu.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):#define LDRDY            BV(0) /* Load Ready. This bit is 0 while the sleep timer
+Hal_mcu.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):                                * loads the 24-bit compare value and 1 when the sleep
+Hal_mcu.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):extern volatile __data uint8 halSleepPconValue;
+Hal_mcu.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb): * when the PCON IDLE bit is set after such a critical ISR fires during the prep for sleep.
+Hal_mcu.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):#define CLEAR_SLEEP_MODE()        st( halSleepPconValue = 0; )
+Hal_mcu.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):#define ALLOW_SLEEP_MODE()        st( halSleepPconValue = PCON_IDLE; )
+Hal_mcu.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):  #define CLEAR_SLEEP_MODE()
+Hal_mcu.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):  #define ALLOW_SLEEP_MODE()
+Hal_mcu.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb): *                                        CC2540 sleep common code
+Hal_mcu.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):#define PCON_IDLE  BV(0)            /* Writing 1 to force CC2540 to enter sleep mode */
+Hal_mcu.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):/* SLEEPCMD bit definitions */
+Hal_mcu.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):/* SLEEPSTA bit definitions */
+Hal_mcu.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):/* SLEEPCMD and SLEEPSTA bit definitions */
+Hal_mcu.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):#define LDRDY            BV(0) /* Load Ready. This bit is 0 while the sleep timer
+Hal_mcu.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):                                * loads the 24-bit compare value and 1 when the sleep
+Hal_mcu.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):extern volatile __data uint8 halSleepPconValue;
+Hal_mcu.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb): * when the PCON IDLE bit is set after such a critical ISR fires during the prep for sleep.
+Hal_mcu.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):#define CLEAR_SLEEP_MODE()        st( halSleepPconValue = 0; )
+Hal_mcu.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):#define ALLOW_SLEEP_MODE()        st( halSleepPconValue = PCON_IDLE; )
+Hal_mcu.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):  #define CLEAR_SLEEP_MODE()
+Hal_mcu.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):  #define ALLOW_SLEEP_MODE()
+Hal_mcu.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc): *                                        CC2540 sleep common code
+Hal_mcu.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):#define PCON_IDLE  BV(0)            /* Writing 1 to force CC2540 to enter sleep mode */
+Hal_mcu.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):/* SLEEPCMD bit definitions */
+Hal_mcu.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):/* SLEEPSTA bit definitions */
+Hal_mcu.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):/* SLEEPCMD and SLEEPSTA bit definitions */
+Hal_mcu.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):#define LDRDY            BV(0) /* Load Ready. This bit is 0 while the sleep timer
+Hal_mcu.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):                                * loads the 24-bit compare value and 1 when the sleep
+Hal_mcu.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):extern volatile __data uint8 halSleepPconValue;
+Hal_mcu.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc): * when the PCON IDLE bit is set after such a critical ISR fires during the prep for sleep.
+Hal_mcu.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):#define CLEAR_SLEEP_MODE()        st( halSleepPconValue = 0; )
+Hal_mcu.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):#define ALLOW_SLEEP_MODE()        st( halSleepPconValue = PCON_IDLE; )
+Hal_mcu.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):  #define CLEAR_SLEEP_MODE()
+Hal_mcu.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):  #define ALLOW_SLEEP_MODE()
+Hal_mcu.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st): *                                        CC2540 sleep common code
+Hal_mcu.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):#define PCON_IDLE  BV(0)            /* Writing 1 to force CC2540 to enter sleep mode */
+Hal_mcu.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):/* SLEEPCMD bit definitions */
+Hal_mcu.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):/* SLEEPSTA bit definitions */
+Hal_mcu.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):/* SLEEPCMD and SLEEPSTA bit definitions */
+Hal_mcu.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):#define LDRDY            BV(0) /* Load Ready. This bit is 0 while the sleep timer
+Hal_mcu.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):                                * loads the 24-bit compare value and 1 when the sleep
+Hal_mcu.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):extern volatile __data uint8 halSleepPconValue;
+Hal_mcu.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st): * when the PCON IDLE bit is set after such a critical ISR fires during the prep for sleep.
+Hal_mcu.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):#define CLEAR_SLEEP_MODE()        st( halSleepPconValue = 0; )
+Hal_mcu.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):#define ALLOW_SLEEP_MODE()        st( halSleepPconValue = PCON_IDLE; )
+Hal_mcu.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):  #define CLEAR_SLEEP_MODE()
+Hal_mcu.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):  #define ALLOW_SLEEP_MODE()
+Hal_mcu.h (e:\cf\work\ble\ble-cc254_9_46\projects\ble\util\ubl\soc_8051\usb_msd\hal): *                                        CC2530 sleep common code
+Hal_mcu.h (e:\cf\work\ble\ble-cc254_9_46\projects\ble\util\ubl\soc_8051\usb_msd\hal):#define PCON_IDLE  BV(0)            /* Writing 1 to force CC2530 to enter sleep mode */
+Hal_mcu.h (e:\cf\work\ble\ble-cc254_9_46\projects\ble\util\ubl\soc_8051\usb_msd\hal):/* SLEEPCMD bit definitions */
+Hal_mcu.h (e:\cf\work\ble\ble-cc254_9_46\projects\ble\util\ubl\soc_8051\usb_msd\hal):/* SLEEPSTA bit definitions */
+Hal_mcu.h (e:\cf\work\ble\ble-cc254_9_46\projects\ble\util\ubl\soc_8051\usb_msd\hal):/* SLEEPCMD and SLEEPSTA bit definitions */
+Hal_mcu.h (e:\cf\work\ble\ble-cc254_9_46\projects\ble\util\ubl\soc_8051\usb_msd\hal):#define LDRDY            BV(0) /* Load Ready. This bit is 0 while the sleep timer
+Hal_mcu.h (e:\cf\work\ble\ble-cc254_9_46\projects\ble\util\ubl\soc_8051\usb_msd\hal):                                * loads the 24-bit compare value and 1 when the sleep
+Hal_mcu.h (e:\cf\work\ble\ble-cc254_9_46\projects\ble\util\ubl\soc_8051\usb_msd\hal):extern volatile __data uint8 halSleepPconValue;
+Hal_mcu.h (e:\cf\work\ble\ble-cc254_9_46\projects\ble\util\ubl\soc_8051\usb_msd\hal): * when the PCON IDLE bit is set after such a critical ISR fires during the prep for sleep.
+Hal_mcu.h (e:\cf\work\ble\ble-cc254_9_46\projects\ble\util\ubl\soc_8051\usb_msd\hal):#define CLEAR_SLEEP_MODE()        st( halSleepPconValue = 0; )
+Hal_mcu.h (e:\cf\work\ble\ble-cc254_9_46\projects\ble\util\ubl\soc_8051\usb_msd\hal):#define ALLOW_SLEEP_MODE()        st( halSleepPconValue = PCON_IDLE; )
+Hal_mcu.h (e:\cf\work\ble\ble-cc254_9_46\projects\ble\util\ubl\soc_8051\usb_msd\hal):#define CLEAR_SLEEP_MODE()
+Hal_mcu.h (e:\cf\work\ble\ble-cc254_9_46\projects\ble\util\ubl\soc_8051\usb_msd\hal):#define ALLOW_SLEEP_MODE()
+Hal_mcu.h (e:\cf\work\ble\ble-cc254_9_46\projects\ble\util\ubl\soc_8051\usb_msd\hal):#define ResetReason() ((SLEEPSTA >> 3) & 0x03)
+Hal_mcu.h (e:\cf\work\ble\ble-cc254_9_46\projects\ble\util\ubl\soc_8051\usb_msd\hal):#define ResetWasWatchDog ((SLEEPSTA & 0x18) == 0x10)
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):  Filename:       hal_sleep.c
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):#include "hal_sleep.h"
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):#include "ll_sleep.h"
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):#ifndef HAL_SLEEP_DEBUG_POWER_MODE
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):#define HAL_SLEEP_PREP_POWER_MODE(mode)                                        \
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):  st( SLEEPCMD &= ~PMODE; /* clear mode bits */                                \
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):      SLEEPCMD |= mode;   /* set mode bits   */                                \
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):      halSleepPconValue = PCON_IDLE;                                           \
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):#define HAL_SLEEP_SET_POWER_MODE()                                             \
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):  halSetSleepMode()
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):#else // HAL_SLEEP_DEBUG_POWER_MODE
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):// Debug: Don't set power mode, just block until sleep timer interrupt.
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):#define HAL_SLEEP_PREP_POWER_MODE(mode)     /* nothing */
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):#define HAL_SLEEP_SET_POWER_MODE()                                             \
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):  st( while(halSleepInt == FALSE);                                             \
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):      halSleepInt = FALSE;                                                     \
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):#endif // !HAL_SLEEP_DEBUG_POWER_MODE
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):// sleep timer interrupt control
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):#define HAL_SLEEP_TIMER_ENABLE_INT()        st(IEN0 |= STIE_BV;)  // enable sleep timer interrupt
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):#define HAL_SLEEP_TIMER_DISABLE_INT()       st(IEN0 &= ~STIE_BV;) // disable sleep timer interrupt
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):#define HAL_SLEEP_TIMER_CLEAR_INT()         st(IRCON &= ~0x80;)   // clear sleep interrupt flag
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):// backup interrupt enable registers before sleep
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):#define HAL_SLEEP_IE_BACKUP_AND_DISABLE( ien0, ien1, ien2 )                    \
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):// restore interrupt enable registers before sleep
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):#define HAL_SLEEP_IE_RESTORE( ien0, ien1, ien2 )                               \
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):#define HAL_SLEEP_MS_TO_625US( ms )         (((((uint32) (ms)) * 8) + 4) / 5)
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):#define HAL_SLEEP_MS_TO_32KHZ( ms )         ((((uint32) (ms)) * 4096) / 125)
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):// max allowed sleep time in ms
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):// Note: When OSAL timer was updated to 32 bits, the call to halSleep was
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb)://       previously used a 16 bit ll_McuPrecisionCount, halSleep was modified
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb)://       which is shorter than the max sleep time of 65.535s! So it is possible
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb)://       Timer2 rollover could occur during sleep, which could affect when an
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb)://       max sleep duration will be limited to less than ll_McuPrecisionCount.
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):// Note: Not an issue for BLE as the max sleep time would have to be less
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):#define MAX_SLEEP_TIMEOUT                   40000
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):// Sleep mode H/W definitions (enabled with POWER_SAVING compile option).
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):// The default setting is HAL_SLEEP_OFF. The actual value is tailored to
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):// different HW platform. Both HAL_SLEEP_TIMER and HAL_SLEEP_DEEP selections
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):// will turn off the system clock, and halt the MCU. HAL_SLEEP_TIMER can be
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):// woken up by sleep timer interrupt, I/O interrupt and reset. HAL_SLEEP_DEEP
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):#define HAL_SLEEP_OFF                       CC2540_PM0
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):#define HAL_SLEEP_TIMER                     CC2540_PM2
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):#define HAL_SLEEP_DEEP                      CC2540_PM3
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):// MAX_SLEEP_TIME calculation:
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):// Sleep timer maximum duration = 0xFFFF7F / 32768 Hz = 511.996 seconds
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):#define MAX_SLEEP_TIME                      16711680              // max time to sleep allowed by ST, in 32kHz ticks
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):// Minimum time to sleep:
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):// 1. avoid thrashing in-and-out of sleep with short OSAL timer
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):// 2. define minimum safe sleep period
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):#if !defined (PM_MIN_SLEEP_TIME)
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):#define PM_MIN_SLEEP_TIME                   66                    // default to min safe sleep time, in 32kHz ticks
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):#endif // !PM_MIN_SLEEP_TIME
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):// This value is used to adjust the sleep timer compare value such that the
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):// sleep timer compare takes into account the amount of processing time spent in
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):// function halSleep(). The first value is determined by measuring the number of
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):// sleep timer ticks from the beginning of the function to entering sleep mode.
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):// The second value is determined by measuring the number of sleep timer ticks
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):// from exit of sleep mode to the call to osal_adjust_timers().
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):#define HAL_SLEEP_ADJ_TICKS                 25                    // default sleep adjustment, in 32kHz ticks
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):#define HAL_SLEEP_ADJ_TICKS                 35                    // default sleep adjustment, in 32kHz ticks
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):// sleep and external interrupt port masks
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):static uint8 halPwrMgtMode = HAL_SLEEP_OFF;
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):#ifdef HAL_SLEEP_DEBUG_POWER_MODE
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):static bool halSleepInt = FALSE;
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):#endif // HAL_SLEEP_DEBUG_POWER_MODE
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):volatile __data uint8 halSleepPconValue = PCON_IDLE;
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):#pragma location = "SLEEP_CODE"
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):void halSetSleepMode(void);
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):void   halSleepSetTimer( uint32 sleepTime, uint32 timeout );
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):uint32 halSleepReadTimer( void );
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb): * @fn          halSleep
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb): * @brief       This function put the CC2540 to sleep. The PCON instruction must
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):void halSetSleepMode(void)
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):  PCON = halSleepPconValue;
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb): * @fn          halSleep
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):void halSleep( uint32 osal_timeout )
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):  uint32 sleepTimer;
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):  // max allowed sleep time in ms
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):  if (osal_timeout > MAX_SLEEP_TIMEOUT)
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):    osal_timeout = MAX_SLEEP_TIMEOUT;
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):  LL_TimeToNextRfEvent( &sleepTimer, &llTimeout );
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):  //       already have taken a snapshot of the Sleep Timer.
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):    // convet OSAL timeout to sleep time
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):    timeout = HAL_SLEEP_MS_TO_32KHZ( osal_timeout );
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):      // so take a snapshot of the sleep timer for sleep based on OSAL timeout
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):      sleepTimer = halSleepReadTimer();
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):  // HAL_SLEEP_PM3 is entered only if the timeout is zero
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):  halPwrMgtMode = (timeout == 0) ? HAL_SLEEP_DEEP : HAL_SLEEP_TIMER;
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):  // check if sleep should be entered
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):  if ( (timeout > PM_MIN_SLEEP_TIME) || (timeout == 0) )
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):    // check if radio allows sleep, and if so, preps system for shutdown
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):    if ( halSleepPconValue && ( LL_PowerOffReq(halPwrMgtMode) == LL_SLEEP_REQUEST_ALLOWED ) )
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):      // get peripherals ready for sleep
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):      HalKeyEnterSleep();
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):#ifdef HAL_SLEEP_DEBUG_LED
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):      // use this to turn LEDs off during sleep
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):      HalLedEnterSleep();
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):#endif // HAL_SLEEP_DEBUG_LED
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):      // enable sleep timer interrupt
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):        // check if the time to next wake event is greater than max sleep time
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):        if (timeout > MAX_SLEEP_TIME )
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):          // it is, so limit to max allowed sleep time (~510s)
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):          halSleepSetTimer( sleepTimer, MAX_SLEEP_TIME );
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):        else // not more than allowed sleep time
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):          // so set sleep time to actual amount
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):          halSleepSetTimer( sleepTimer, timeout );
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):      HAL_SLEEP_PREP_POWER_MODE(halPwrMgtMode);
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):      HAL_SLEEP_IE_BACKUP_AND_DISABLE(ien0, ien1, ien2);
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):      // Note: Any ISR that could wake the device from sleep needs to use
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):      //       CLEAR_SLEEP_MODE(), which will clear the halSleepPconValue flag
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):      //       used to enter sleep mode, thereby preventing the device from
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):      HAL_SLEEP_SET_POWER_MODE();
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):      // Note: This is needed in case we are not woken by the sleep timer but
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):      //       before the sleep timer would have woken us just before a radio
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):      HAL_SLEEP_IE_RESTORE(ien0, ien1, ien2);
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):#ifdef HAL_SLEEP_DEBUG_LED
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):#else //!HAL_SLEEP_DEBUG_LED
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):      // use this to turn LEDs back on after sleep
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):      HalLedExitSleep();
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):#endif // HAL_SLEEP_DEBUG_LED
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):      (void)HalKeyExitSleep();
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb): * @fn          halSleepSetTimer
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb): * @brief       This function sets the CC2540 sleep timer compare value based
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb): *              on a given snapshot of the sleep timer, and a timeout that is
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb): *              terms of sleep time. In addition, the offset is adjusted based
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb): *              on a configurable adjustment to take the sleep handler's
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb): *              execution time into account. The sleep timer interrupt is then
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb): * @param       sleepTimer - Sleep timer value timeout is relative to.
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):void halSleepSetTimer( uint32 sleepTimer, uint32 timeout )
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):  HAL_SLEEP_TIMER_DISABLE_INT();
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):  // compute sleep timer compare value
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):  sleepTimer += timeout;
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):  // subtract the processing time spent in function halSleep()
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):  sleepTimer -= HAL_SLEEP_ADJ_TICKS;
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):  // set sleep timer compare; ST0 must be written last
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):  ST2 = ((uint8 *)&sleepTimer)[UINT32_NDX2];
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):  ST1 = ((uint8 *)&sleepTimer)[UINT32_NDX1];
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):  ST0 = ((uint8 *)&sleepTimer)[UINT32_NDX0];
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):  HAL_SLEEP_TIMER_CLEAR_INT();
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):  HAL_SLEEP_TIMER_ENABLE_INT();
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb): * @fn          halSleepReadTimer
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb): * @brief       This function reads the CC2540 sleep timer.
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb): * @return      A snapshot of the 24 bit sleep timer.
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):uint32 halSleepReadTimer( void )
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):  uint32 sleepTimer;
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):  // read the sleep timer
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):  ((uint8 *)&sleepTimer)[UINT32_NDX0] = ST0;
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):  ((uint8 *)&sleepTimer)[UINT32_NDX1] = ST1;
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):  ((uint8 *)&sleepTimer)[UINT32_NDX2] = ST2;
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):  ((uint8 *)&sleepTimer)[UINT32_NDX3] = 0;
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):  return( sleepTimer );
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb): * @brief       Determine the number of OSAL timer ticks elapsed during sleep.
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb): * @return      Number of timer ticks elapsed during sleep.
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb): * @fn          halRestoreSleepLevel
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb): * @brief       Restore the deepest timer sleep level.
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):void halRestoreSleepLevel( void )
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):  osal_start_timerEx (Hal_TaskID, HAL_SLEEP_TIMER_EVENT, 1000);
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb): * @fn          halSleepTimerIsr
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb): * @brief       Sleep timer ISR.
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):HAL_ISR_FUNCTION(halSleepTimerIsr, ST_VECTOR)
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):  HAL_SLEEP_TIMER_CLEAR_INT();
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):#ifdef HAL_SLEEP_DEBUG_POWER_MODE
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):  halSleepInt = TRUE;
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):#endif // HAL_SLEEP_DEBUG_POWER_MODE
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):  CLEAR_SLEEP_MODE();
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):  Filename:       hal_sleep.c
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):#include "hal_sleep.h"
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):#include "ll_sleep.h"
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):#ifndef HAL_SLEEP_DEBUG_POWER_MODE
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):#define HAL_SLEEP_PREP_POWER_MODE(mode)                                        \
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):  st( SLEEPCMD &= ~PMODE; /* clear mode bits */                                \
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):      SLEEPCMD |= mode;   /* set mode bits   */                                \
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):      halSleepPconValue = PCON_IDLE;                                           \
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):#define HAL_SLEEP_SET_POWER_MODE()                                             \
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):  halSetSleepMode()
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):#else // HAL_SLEEP_DEBUG_POWER_MODE
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):// Debug: Don't set power mode, just block until sleep timer interrupt.
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):#define HAL_SLEEP_PREP_POWER_MODE(mode)     /* nothing */
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):#define HAL_SLEEP_SET_POWER_MODE()                                             \
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):  st( while(halSleepInt == FALSE);                                             \
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):      halSleepInt = FALSE;                                                     \
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):#endif // !HAL_SLEEP_DEBUG_POWER_MODE
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):// sleep timer interrupt control
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):#define HAL_SLEEP_TIMER_ENABLE_INT()        st(IEN0 |= STIE_BV;)  // enable sleep timer interrupt
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):#define HAL_SLEEP_TIMER_DISABLE_INT()       st(IEN0 &= ~STIE_BV;) // disable sleep timer interrupt
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):#define HAL_SLEEP_TIMER_CLEAR_INT()         st(IRCON &= ~0x80;)   // clear sleep interrupt flag
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):// backup interrupt enable registers before sleep
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):#define HAL_SLEEP_IE_BACKUP_AND_DISABLE( ien0, ien1, ien2 )                    \
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):// restore interrupt enable registers before sleep
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):#define HAL_SLEEP_IE_RESTORE( ien0, ien1, ien2 )                               \
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):#define HAL_SLEEP_MS_TO_625US( ms )         (((((uint32) (ms)) * 8) + 4) / 5)
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):#define HAL_SLEEP_MS_TO_32KHZ( ms )         ((((uint32) (ms)) * 4096) / 125)
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):// max allowed sleep time in ms
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):// Note: When OSAL timer was updated to 32 bits, the call to halSleep was
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb)://       previously used a 16 bit ll_McuPrecisionCount, halSleep was modified
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb)://       which is shorter than the max sleep time of 65.535s! So it is possible
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb)://       Timer2 rollover could occur during sleep, which could affect when an
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb)://       max sleep duration will be limited to less than ll_McuPrecisionCount.
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):// Note: Not an issue for BLE as the max sleep time would have to be less
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):#define MAX_SLEEP_TIMEOUT                   40000
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):// Sleep mode H/W definitions (enabled with POWER_SAVING compile option).
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):// The default setting is HAL_SLEEP_OFF. The actual value is tailored to
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):// different HW platform. Both HAL_SLEEP_TIMER and HAL_SLEEP_DEEP selections
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):// will turn off the system clock, and halt the MCU. HAL_SLEEP_TIMER can be
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):// woken up by sleep timer interrupt, I/O interrupt and reset. HAL_SLEEP_DEEP
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):#define HAL_SLEEP_OFF                       CC2540_PM0
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):#define HAL_SLEEP_TIMER                     CC2540_PM2
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):#define HAL_SLEEP_DEEP                      CC2540_PM3
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):// MAX_SLEEP_TIME calculation:
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):// Sleep timer maximum duration = 0xFFFF7F / 32768 Hz = 511.996 seconds
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):#define MAX_SLEEP_TIME                      16711680              // max time to sleep allowed by ST, in 32kHz ticks
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):// Minimum time to sleep:
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):// 1. avoid thrashing in-and-out of sleep with short OSAL timer
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):// 2. define minimum safe sleep period
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):#if !defined (PM_MIN_SLEEP_TIME)
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):#define PM_MIN_SLEEP_TIME                   66                    // default to min safe sleep time, in 32kHz ticks
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):#endif // !PM_MIN_SLEEP_TIME
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):// This value is used to adjust the sleep timer compare value such that the
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):// sleep timer compare takes into account the amount of processing time spent in
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):// function halSleep(). The first value is determined by measuring the number of
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):// sleep timer ticks from the beginning of the function to entering sleep mode.
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):// The second value is determined by measuring the number of sleep timer ticks
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):// from exit of sleep mode to the call to osal_adjust_timers().
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):#define HAL_SLEEP_ADJ_TICKS                 25                    // default sleep adjustment, in 32kHz ticks
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):#define HAL_SLEEP_ADJ_TICKS                 35                    // default sleep adjustment, in 32kHz ticks
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):// sleep and external interrupt port masks
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):static uint8 halPwrMgtMode = HAL_SLEEP_OFF;
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):#ifdef HAL_SLEEP_DEBUG_POWER_MODE
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):static bool halSleepInt = FALSE;
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):#endif // HAL_SLEEP_DEBUG_POWER_MODE
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):volatile __data uint8 halSleepPconValue = PCON_IDLE;
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):#pragma location = "SLEEP_CODE"
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):void halSetSleepMode(void);
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):void   halSleepSetTimer( uint32 sleepTime, uint32 timeout );
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):uint32 halSleepReadTimer( void );
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb): * @fn          halSleep
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb): * @brief       This function put the CC2540 to sleep. The PCON instruction must
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):void halSetSleepMode(void)
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):  PCON = halSleepPconValue;
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb): * @fn          halSleep
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):void halSleep( uint32 osal_timeout )
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):  uint32 sleepTimer;
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):  // max allowed sleep time in ms
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):  if (osal_timeout > MAX_SLEEP_TIMEOUT)
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):    osal_timeout = MAX_SLEEP_TIMEOUT;
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):  LL_TimeToNextRfEvent( &sleepTimer, &llTimeout );
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):  //       already have taken a snapshot of the Sleep Timer.
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):    // convet OSAL timeout to sleep time
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):    timeout = HAL_SLEEP_MS_TO_32KHZ( osal_timeout );
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):      // so take a snapshot of the sleep timer for sleep based on OSAL timeout
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):      sleepTimer = halSleepReadTimer();
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):  // HAL_SLEEP_PM3 is entered only if the timeout is zero
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):  halPwrMgtMode = (timeout == 0) ? HAL_SLEEP_DEEP : HAL_SLEEP_TIMER;
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):  // check if sleep should be entered
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):  if ( (timeout > PM_MIN_SLEEP_TIME) || (timeout == 0) )
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):    // check if radio allows sleep, and if so, preps system for shutdown
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):    if ( halSleepPconValue && ( LL_PowerOffReq(halPwrMgtMode) == LL_SLEEP_REQUEST_ALLOWED ) )
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):      // get peripherals ready for sleep
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):      HalKeyEnterSleep();
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):#ifdef HAL_SLEEP_DEBUG_LED
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):      // use this to turn LEDs off during sleep
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):      HalLedEnterSleep();
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):#endif // HAL_SLEEP_DEBUG_LED
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):      // enable sleep timer interrupt
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):        // check if the time to next wake event is greater than max sleep time
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):        if (timeout > MAX_SLEEP_TIME )
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):          // it is, so limit to max allowed sleep time (~510s)
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):          halSleepSetTimer( sleepTimer, MAX_SLEEP_TIME );
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):        else // not more than allowed sleep time
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):          // so set sleep time to actual amount
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):          halSleepSetTimer( sleepTimer, timeout );
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):      HAL_SLEEP_PREP_POWER_MODE(halPwrMgtMode);
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):      HAL_SLEEP_IE_BACKUP_AND_DISABLE(ien0, ien1, ien2);
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):      // Note: Any ISR that could wake the device from sleep needs to use
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):      //       CLEAR_SLEEP_MODE(), which will clear the halSleepPconValue flag
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):      //       used to enter sleep mode, thereby preventing the device from
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):      HAL_SLEEP_SET_POWER_MODE();
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):      // Note: This is needed in case we are not woken by the sleep timer but
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):      //       before the sleep timer would have woken us just before a radio
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):      HAL_SLEEP_IE_RESTORE(ien0, ien1, ien2);
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):#ifdef HAL_SLEEP_DEBUG_LED
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):#else //!HAL_SLEEP_DEBUG_LED
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):      // use this to turn LEDs back on after sleep
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):      HalLedExitSleep();
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):#endif // HAL_SLEEP_DEBUG_LED
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):      (void)HalKeyExitSleep();
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb): * @fn          halSleepSetTimer
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb): * @brief       This function sets the CC2540 sleep timer compare value based
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb): *              on a given snapshot of the sleep timer, and a timeout that is
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb): *              terms of sleep time. In addition, the offset is adjusted based
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb): *              on a configurable adjustment to take the sleep handler's
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb): *              execution time into account. The sleep timer interrupt is then
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb): * @param       sleepTimer - Sleep timer value timeout is relative to.
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):void halSleepSetTimer( uint32 sleepTimer, uint32 timeout )
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):  HAL_SLEEP_TIMER_DISABLE_INT();
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):  // compute sleep timer compare value
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):  sleepTimer += timeout;
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):  // subtract the processing time spent in function halSleep()
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):  sleepTimer -= HAL_SLEEP_ADJ_TICKS;
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):  // set sleep timer compare; ST0 must be written last
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):  ST2 = ((uint8 *)&sleepTimer)[UINT32_NDX2];
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):  ST1 = ((uint8 *)&sleepTimer)[UINT32_NDX1];
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):  ST0 = ((uint8 *)&sleepTimer)[UINT32_NDX0];
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):  HAL_SLEEP_TIMER_CLEAR_INT();
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):  HAL_SLEEP_TIMER_ENABLE_INT();
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb): * @fn          halSleepReadTimer
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb): * @brief       This function reads the CC2540 sleep timer.
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb): * @return      A snapshot of the 24 bit sleep timer.
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):uint32 halSleepReadTimer( void )
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):  uint32 sleepTimer;
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):  // read the sleep timer
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):  ((uint8 *)&sleepTimer)[UINT32_NDX0] = ST0;
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):  ((uint8 *)&sleepTimer)[UINT32_NDX1] = ST1;
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):  ((uint8 *)&sleepTimer)[UINT32_NDX2] = ST2;
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):  ((uint8 *)&sleepTimer)[UINT32_NDX3] = 0;
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):  return( sleepTimer );
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb): * @brief       Determine the number of OSAL timer ticks elapsed during sleep.
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb): * @return      Number of timer ticks elapsed during sleep.
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb): * @fn          halRestoreSleepLevel
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb): * @brief       Restore the deepest timer sleep level.
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):void halRestoreSleepLevel( void )
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):  osal_start_timerEx (Hal_TaskID, HAL_SLEEP_TIMER_EVENT, 1000);
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb): * @fn          halSleepTimerIsr
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb): * @brief       Sleep timer ISR.
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):HAL_ISR_FUNCTION(halSleepTimerIsr, ST_VECTOR)
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):  HAL_SLEEP_TIMER_CLEAR_INT();
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):#ifdef HAL_SLEEP_DEBUG_POWER_MODE
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):  halSleepInt = TRUE;
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):#endif // HAL_SLEEP_DEBUG_POWER_MODE
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):  CLEAR_SLEEP_MODE();
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):  Filename:       hal_sleep.c
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):#include "hal_sleep.h"
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):#include "ll_sleep.h"
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):#ifndef HAL_SLEEP_DEBUG_POWER_MODE
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):#define HAL_SLEEP_PREP_POWER_MODE(mode)                                        \
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):  st( SLEEPCMD &= ~PMODE; /* clear mode bits */                                \
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):      SLEEPCMD |= mode;   /* set mode bits   */                                \
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):      halSleepPconValue = PCON_IDLE;                                           \
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):#define HAL_SLEEP_SET_POWER_MODE()                                             \
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):  halSetSleepMode()
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):#else // HAL_SLEEP_DEBUG_POWER_MODE
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):// Debug: Don't set power mode, just block until sleep timer interrupt.
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):#define HAL_SLEEP_PREP_POWER_MODE(mode)     /* nothing */
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):#define HAL_SLEEP_SET_POWER_MODE()                                             \
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):  st( while(halSleepInt == FALSE);                                             \
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):      halSleepInt = FALSE;                                                     \
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):#endif // !HAL_SLEEP_DEBUG_POWER_MODE
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):// sleep timer interrupt control
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):#define HAL_SLEEP_TIMER_ENABLE_INT()        st(IEN0 |= STIE_BV;)  // enable sleep timer interrupt
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):#define HAL_SLEEP_TIMER_DISABLE_INT()       st(IEN0 &= ~STIE_BV;) // disable sleep timer interrupt
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):#define HAL_SLEEP_TIMER_CLEAR_INT()         st(IRCON &= ~0x80;)   // clear sleep interrupt flag
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):// backup interrupt enable registers before sleep
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):#define HAL_SLEEP_IE_BACKUP_AND_DISABLE( ien0, ien1, ien2 )                    \
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):// restore interrupt enable registers before sleep
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):#define HAL_SLEEP_IE_RESTORE( ien0, ien1, ien2 )                               \
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):#define HAL_SLEEP_MS_TO_625US( ms )         (((((uint32) (ms)) * 8) + 4) / 5)
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):#define HAL_SLEEP_MS_TO_32KHZ( ms )         ((((uint32) (ms)) * 4096) / 125)
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):// Sleep mode H/W definitions (enabled with POWER_SAVING compile option).
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):// The default setting is HAL_SLEEP_OFF. The actual value is tailored to
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):// different HW platform. Both HAL_SLEEP_TIMER and HAL_SLEEP_DEEP selections
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):// will turn off the system clock, and halt the MCU. HAL_SLEEP_TIMER can be
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):// woken up by sleep timer interrupt, I/O interrupt and reset. HAL_SLEEP_DEEP
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):#define HAL_SLEEP_OFF                       CC2540_PM0
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):#define HAL_SLEEP_TIMER                     CC2540_PM2
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):#define HAL_SLEEP_DEEP                      CC2540_PM3
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):// MAX_SLEEP_TIME calculation:
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):// Sleep timer maximum duration = 0xFFFF7F / 32768 Hz = 511.996 seconds
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):#define MAX_SLEEP_TIME                      16711680              // max time to sleep allowed by ST, in 32kHz ticks
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):// Minimum time to sleep:
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):// 1. avoid thrashing in-and-out of sleep with short OSAL timer
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):// 2. define minimum safe sleep period
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):#if !defined (PM_MIN_SLEEP_TIME)
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):#define PM_MIN_SLEEP_TIME                   66                    // default to min safe sleep time, in 32kHz ticks
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):#endif // !PM_MIN_SLEEP_TIME
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):// This value is used to adjust the sleep timer compare value such that the
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):// sleep timer compare takes into account the amount of processing time spent in
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):// function halSleep(). The first value is determined by measuring the number of
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):// sleep timer ticks from the beginning of the function to entering sleep mode.
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):// The second value is determined by measuring the number of sleep timer ticks
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):// from exit of sleep mode to the call to osal_adjust_timers().
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):#define HAL_SLEEP_ADJ_TICKS                 25                    // default sleep adjustment, in 32kHz ticks
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):#define HAL_SLEEP_ADJ_TICKS                 35                    // default sleep adjustment, in 32kHz ticks
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):// sleep and external interrupt port masks
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):static uint8 halPwrMgtMode = HAL_SLEEP_OFF;
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):#ifdef HAL_SLEEP_DEBUG_POWER_MODE
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):static bool halSleepInt = FALSE;
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):#endif // HAL_SLEEP_DEBUG_POWER_MODE
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):volatile __data uint8 halSleepPconValue = PCON_IDLE;
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):#pragma location = "SLEEP_CODE"
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):void halSetSleepMode(void);
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):void   halSleepSetTimer( uint32 sleepTime, uint32 timeout );
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):uint32 halSleepReadTimer( void );
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc): * @fn          halSleep
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc): * @brief       This function put the CC2540 to sleep. The PCON instruction must
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):void halSetSleepMode(void)
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):  PCON = halSleepPconValue;
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc): * @fn          halSleep
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):void halSleep( uint32 osal_timeout )
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):  uint32 sleepTimer;
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):  LL_TimeToNextRfEvent( &sleepTimer, &llTimeout );
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):  //       already have taken a snapshot of the Sleep Timer.
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):    // convet OSAL timeout to sleep time
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):    timeout = HAL_SLEEP_MS_TO_32KHZ( osal_timeout );
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):      // so take a snapshot of the sleep timer for sleep based on OSAL timeout
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):      sleepTimer = halSleepReadTimer();
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):  // HAL_SLEEP_PM3 is entered only if the timeout is zero
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):  halPwrMgtMode = (timeout == 0) ? HAL_SLEEP_DEEP : HAL_SLEEP_TIMER;
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):  // check if sleep should be entered
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):  if ( (timeout > PM_MIN_SLEEP_TIME) || (timeout == 0) )
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):    // check if radio allows sleep, and if so, preps system for shutdown
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):    if ( LL_PowerOffReq(halPwrMgtMode) == LL_SLEEP_REQUEST_ALLOWED )
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):      // get peripherals ready for sleep
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):      HalKeyEnterSleep();
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):#ifdef HAL_SLEEP_DEBUG_LED
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):      // use this to turn LEDs off during sleep
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):      HalLedEnterSleep();
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):#endif // HAL_SLEEP_DEBUG_LED
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):      // enable sleep timer interrupt
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):        // check if the time to next wake event is greater than max sleep time
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):        if (timeout > MAX_SLEEP_TIME )
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):          // it is, so limit to max allowed sleep time (~510s)
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):          halSleepSetTimer( sleepTimer, MAX_SLEEP_TIME );
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):        else // not more than allowed sleep time
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):          // so set sleep time to actual amount
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):          halSleepSetTimer( sleepTimer, timeout );
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):      HAL_SLEEP_PREP_POWER_MODE(halPwrMgtMode);
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):      HAL_SLEEP_IE_BACKUP_AND_DISABLE(ien0, ien1, ien2);
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):      // Note: Any ISR that could wake the device from sleep needs to use
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):      //       CLEAR_SLEEP_MODE(), which will clear the halSleepPconValue flag
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):      //       used to enter sleep mode, thereby preventing the device from
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):      HAL_SLEEP_SET_POWER_MODE();
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):      // Note: This is needed in case we are not woken by the sleep timer but
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):      //       before the sleep timer would have woken us just before a radio
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):      HAL_SLEEP_IE_RESTORE(ien0, ien1, ien2);
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):#ifdef HAL_SLEEP_DEBUG_LED
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):#else //!HAL_SLEEP_DEBUG_LED
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):      // use this to turn LEDs back on after sleep
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):      HalLedExitSleep();
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):#endif // HAL_SLEEP_DEBUG_LED
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):      (void)HalKeyExitSleep();
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc): * @fn          halSleepSetTimer
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc): * @brief       This function sets the CC2540 sleep timer compare value based
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc): *              on a given snapshot of the sleep timer, and a timeout that is
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc): *              terms of sleep time. In addition, the offset is adjusted based
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc): *              on a configurable adjustment to take the sleep handler's
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc): *              execution time into account. The sleep timer interrupt is then
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc): * @param       sleepTimer - Sleep timer value timeout is relative to.
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):void halSleepSetTimer( uint32 sleepTimer, uint32 timeout )
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):  HAL_SLEEP_TIMER_DISABLE_INT();
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):  // compute sleep timer compare value
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):  sleepTimer += timeout;
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):  // subtract the processing time spent in function halSleep()
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):  sleepTimer -= HAL_SLEEP_ADJ_TICKS;
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):  // set sleep timer compare; ST0 must be written last
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):  ST2 = ((uint8 *)&sleepTimer)[UINT32_NDX2];
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):  ST1 = ((uint8 *)&sleepTimer)[UINT32_NDX1];
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):  ST0 = ((uint8 *)&sleepTimer)[UINT32_NDX0];
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):  HAL_SLEEP_TIMER_CLEAR_INT();
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):  HAL_SLEEP_TIMER_ENABLE_INT();
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc): * @fn          halSleepReadTimer
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc): * @brief       This function reads the CC2540 sleep timer.
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc): * @return      A snapshot of the 24 bit sleep timer.
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):uint32 halSleepReadTimer( void )
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):  uint32 sleepTimer;
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):  // read the sleep timer
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):  ((uint8 *)&sleepTimer)[UINT32_NDX0] = ST0;
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):  ((uint8 *)&sleepTimer)[UINT32_NDX1] = ST1;
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):  ((uint8 *)&sleepTimer)[UINT32_NDX2] = ST2;
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):  ((uint8 *)&sleepTimer)[UINT32_NDX3] = 0;
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):  return( sleepTimer );
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc): * @brief       Determine the number of OSAL timer ticks elapsed during sleep.
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc): * @return      Number of timer ticks elapsed during sleep.
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc): * @fn          halRestoreSleepLevel
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc): * @brief       Restore the deepest timer sleep level.
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):void halRestoreSleepLevel( void )
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):  osal_start_timerEx (Hal_TaskID, HAL_SLEEP_TIMER_EVENT, 1000);
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc): * @fn          halSleepTimerIsr
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc): * @brief       Sleep timer ISR.
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):HAL_ISR_FUNCTION(halSleepTimerIsr, ST_VECTOR)
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):  HAL_SLEEP_TIMER_CLEAR_INT();
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):#ifdef HAL_SLEEP_DEBUG_POWER_MODE
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):  halSleepInt = TRUE;
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):#endif // HAL_SLEEP_DEBUG_POWER_MODE
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):  CLEAR_SLEEP_MODE();
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc): * @fn          halSleepWait
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541arc):void halSleepWait(uint16 duration)
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):  Filename:       hal_sleep.c
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):#include "hal_sleep.h"
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):#include "ll_sleep.h"
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):#ifndef HAL_SLEEP_DEBUG_POWER_MODE
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):#define HAL_SLEEP_PREP_POWER_MODE(mode)                                        \
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):  st( SLEEPCMD &= ~PMODE; /* clear mode bits */                                \
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):      SLEEPCMD |= mode;   /* set mode bits   */                                \
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):      halSleepPconValue = PCON_IDLE;                                           \
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):#define HAL_SLEEP_SET_POWER_MODE()                                             \
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):  halSetSleepMode()
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):#else // HAL_SLEEP_DEBUG_POWER_MODE
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):// Debug: Don't set power mode, just block until sleep timer interrupt.
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):#define HAL_SLEEP_PREP_POWER_MODE(mode)     /* nothing */
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):#define HAL_SLEEP_SET_POWER_MODE()                                             \
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):  st( while(halSleepInt == FALSE);                                             \
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):      halSleepInt = FALSE;                                                     \
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):#endif // !HAL_SLEEP_DEBUG_POWER_MODE
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):// sleep timer interrupt control
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):#define HAL_SLEEP_TIMER_ENABLE_INT()        st(IEN0 |= STIE_BV;)  // enable sleep timer interrupt
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):#define HAL_SLEEP_TIMER_DISABLE_INT()       st(IEN0 &= ~STIE_BV;) // disable sleep timer interrupt
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):#define HAL_SLEEP_TIMER_CLEAR_INT()         st(IRCON &= ~0x80;)   // clear sleep interrupt flag
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):// backup interrupt enable registers before sleep
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):#define HAL_SLEEP_IE_BACKUP_AND_DISABLE( ien0, ien1, ien2 )                    \
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):// restore interrupt enable registers before sleep
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):#define HAL_SLEEP_IE_RESTORE( ien0, ien1, ien2 )                               \
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):#define HAL_SLEEP_MS_TO_625US( ms )         (((((uint32) (ms)) * 8) + 4) / 5)
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):#define HAL_SLEEP_MS_TO_32KHZ( ms )         ((((uint32) (ms)) * 4096) / 125)
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):// Sleep mode H/W definitions (enabled with POWER_SAVING compile option).
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):// The default setting is HAL_SLEEP_OFF. The actual value is tailored to
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):// different HW platform. Both HAL_SLEEP_TIMER and HAL_SLEEP_DEEP selections
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):// will turn off the system clock, and halt the MCU. HAL_SLEEP_TIMER can be
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):// woken up by sleep timer interrupt, I/O interrupt and reset. HAL_SLEEP_DEEP
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):#define HAL_SLEEP_OFF                       CC2540_PM0
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):#define HAL_SLEEP_TIMER                     CC2540_PM2
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):#define HAL_SLEEP_DEEP                      CC2540_PM3
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):// MAX_SLEEP_TIME calculation:
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):// Sleep timer maximum duration = 0xFFFF7F / 32768 Hz = 511.996 seconds
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):#define MAX_SLEEP_TIME                      16711680              // max time to sleep allowed by ST, in 32kHz ticks
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):// Minimum time to sleep:
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):// 1. avoid thrashing in-and-out of sleep with short OSAL timer
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):// 2. define minimum safe sleep period
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):#if !defined (PM_MIN_SLEEP_TIME)
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):#define PM_MIN_SLEEP_TIME                   66                    // default to min safe sleep time, in 32kHz ticks
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):#endif // !PM_MIN_SLEEP_TIME
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):// This value is used to adjust the sleep timer compare value such that the
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):// sleep timer compare takes into account the amount of processing time spent in
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):// function halSleep(). The first value is determined by measuring the number of
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):// sleep timer ticks from the beginning of the function to entering sleep mode.
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):// The second value is determined by measuring the number of sleep timer ticks
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):// from exit of sleep mode to the call to osal_adjust_timers().
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):#define HAL_SLEEP_ADJ_TICKS                 25                    // default sleep adjustment, in 32kHz ticks
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):#define HAL_SLEEP_ADJ_TICKS                 35                    // default sleep adjustment, in 32kHz ticks
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):// sleep and external interrupt port masks
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):static uint8 halPwrMgtMode = HAL_SLEEP_OFF;
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):#ifdef HAL_SLEEP_DEBUG_POWER_MODE
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):static bool halSleepInt = FALSE;
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):#endif // HAL_SLEEP_DEBUG_POWER_MODE
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):volatile __data uint8 halSleepPconValue = PCON_IDLE;
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):#pragma location = "SLEEP_CODE"
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):void halSetSleepMode(void);
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):void   halSleepSetTimer( uint32 sleepTime, uint32 timeout );
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):uint32 halSleepReadTimer( void );
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st): * @fn          halSleep
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st): * @brief       This function put the CC2540 to sleep. The PCON instruction must
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):void halSetSleepMode(void)
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):  PCON = halSleepPconValue;
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st): * @fn          halSleep
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):void halSleep( uint32 osal_timeout )
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):  uint32 sleepTimer;
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):  LL_TimeToNextRfEvent( &sleepTimer, &llTimeout );
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):  //       already have taken a snapshot of the Sleep Timer.
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):    // convet OSAL timeout to sleep time
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):    timeout = HAL_SLEEP_MS_TO_32KHZ( osal_timeout );
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):      // so take a snapshot of the sleep timer for sleep based on OSAL timeout
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):      sleepTimer = halSleepReadTimer();
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):  // HAL_SLEEP_PM3 is entered only if the timeout is zero
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):  halPwrMgtMode = (timeout == 0) ? HAL_SLEEP_DEEP : HAL_SLEEP_TIMER;
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):  // check if sleep should be entered
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):  if ( (timeout > PM_MIN_SLEEP_TIME) || (timeout == 0) )
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):    // check if radio allows sleep, and if so, preps system for shutdown
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):    if ( LL_PowerOffReq(halPwrMgtMode) == LL_SLEEP_REQUEST_ALLOWED )
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):      // get peripherals ready for sleep
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):      HalKeyEnterSleep();
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):#ifdef HAL_SLEEP_DEBUG_LED
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):      // use this to turn LEDs off during sleep
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):      HalLedEnterSleep();
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):#endif // HAL_SLEEP_DEBUG_LED
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):      // enable sleep timer interrupt
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):        // check if the time to next wake event is greater than max sleep time
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):        if (timeout > MAX_SLEEP_TIME )
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):          // it is, so limit to max allowed sleep time (~510s)
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):          halSleepSetTimer( sleepTimer, MAX_SLEEP_TIME );
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):        else // not more than allowed sleep time
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):          // so set sleep time to actual amount
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):          halSleepSetTimer( sleepTimer, timeout );
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):      HAL_SLEEP_PREP_POWER_MODE(halPwrMgtMode);
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):      HAL_SLEEP_IE_BACKUP_AND_DISABLE(ien0, ien1, ien2);
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):      // Note: Any ISR that could wake the device from sleep needs to use
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):      //       CLEAR_SLEEP_MODE(), which will clear the halSleepPconValue flag
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):      //       used to enter sleep mode, thereby preventing the device from
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):      HAL_SLEEP_SET_POWER_MODE();
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):      // Note: This is needed in case we are not woken by the sleep timer but
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):      //       before the sleep timer would have woken us just before a radio
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):      HAL_SLEEP_IE_RESTORE(ien0, ien1, ien2);
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):#ifdef HAL_SLEEP_DEBUG_LED
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):#else //!HAL_SLEEP_DEBUG_LED
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):      // use this to turn LEDs back on after sleep
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):      HalLedExitSleep();
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):#endif // HAL_SLEEP_DEBUG_LED
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):      (void)HalKeyExitSleep();
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st): * @fn          halSleepSetTimer
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st): * @brief       This function sets the CC2540 sleep timer compare value based
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st): *              on a given snapshot of the sleep timer, and a timeout that is
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st): *              terms of sleep time. In addition, the offset is adjusted based
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st): *              on a configurable adjustment to take the sleep handler's
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st): *              execution time into account. The sleep timer interrupt is then
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st): * @param       sleepTimer - Sleep timer value timeout is relative to.
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):void halSleepSetTimer( uint32 sleepTimer, uint32 timeout )
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):  HAL_SLEEP_TIMER_DISABLE_INT();
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):  // compute sleep timer compare value
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):  sleepTimer += timeout;
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):  // subtract the processing time spent in function halSleep()
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):  sleepTimer -= HAL_SLEEP_ADJ_TICKS;
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):  // set sleep timer compare; ST0 must be written last
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):  ST2 = ((uint8 *)&sleepTimer)[UINT32_NDX2];
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):  ST1 = ((uint8 *)&sleepTimer)[UINT32_NDX1];
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):  ST0 = ((uint8 *)&sleepTimer)[UINT32_NDX0];
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):  HAL_SLEEP_TIMER_CLEAR_INT();
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):  HAL_SLEEP_TIMER_ENABLE_INT();
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st): * @fn          halSleepReadTimer
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st): * @brief       This function reads the CC2540 sleep timer.
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st): * @return      A snapshot of the 24 bit sleep timer.
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):uint32 halSleepReadTimer( void )
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):  uint32 sleepTimer;
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):  // read the sleep timer
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):  ((uint8 *)&sleepTimer)[UINT32_NDX0] = ST0;
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):  ((uint8 *)&sleepTimer)[UINT32_NDX1] = ST1;
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):  ((uint8 *)&sleepTimer)[UINT32_NDX2] = ST2;
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):  ((uint8 *)&sleepTimer)[UINT32_NDX3] = 0;
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):  return( sleepTimer );
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st): * @brief       Determine the number of OSAL timer ticks elapsed during sleep.
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st): * @return      Number of timer ticks elapsed during sleep.
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st): * @fn          halRestoreSleepLevel
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st): * @brief       Restore the deepest timer sleep level.
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):void halRestoreSleepLevel( void )
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):  osal_start_timerEx (Hal_TaskID, HAL_SLEEP_TIMER_EVENT, 1000);
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st): * @fn          halSleepTimerIsr
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st): * @brief       Sleep timer ISR.
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):HAL_ISR_FUNCTION(halSleepTimerIsr, ST_VECTOR)
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):  HAL_SLEEP_TIMER_CLEAR_INT();
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):#ifdef HAL_SLEEP_DEBUG_POWER_MODE
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):  halSleepInt = TRUE;
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):#endif // HAL_SLEEP_DEBUG_POWER_MODE
+Hal_sleep.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2541st):  CLEAR_SLEEP_MODE();
+Hal_sleep.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\include):  Filename:       hal_sleep.h
+Hal_sleep.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\include):#ifndef HAL_SLEEP_H
+Hal_sleep.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\include):#define HAL_SLEEP_H
+Hal_sleep.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\include):extern void halSleep( uint32 osal_timer );
+Hal_sleep.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\include):extern void halSleepWait(uint16 duration);
+Hal_sleep.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\include):extern void halRestoreSleepLevel( void );
+Hal_sleep.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\include): * Used by the interrupt routines to exit from sleep.
+Hal_sleep.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\include):extern void halSleepExit(void);
+Hal_sleep.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\include): * Set the max sleep loop time lesser than the T2 rollover period.
+Hal_sleep.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\include):extern void halSetMaxSleepLoopTime(uint32 rolloverTime);
+Hal_uart.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\include): * Abort UART when entering sleep mode
+Hal_uart.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\include): * Resume UART after wakeup from sleep
+_hal_uart_dma.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):// Minimum delay before allowing sleep and/or clearing DMA ready-out after a DMA ready-in ISR.
+_hal_uart_dma.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):static uint8 dmaRdyDly;  // Minimum delay before allowing sleep after detecting RdyIn de-asserted.
+_hal_uart_dma.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):    // Use the LSB of the sleep timer (ST0 must be read first anyway) to measure the Rx timeout.
+_hal_uart_dma.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):  CLEAR_SLEEP_MODE();
+_hal_uart_dma.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):// Minimum delay before allowing sleep and/or clearing DMA ready-out after a DMA ready-in ISR.
+_hal_uart_dma.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):static uint8 dmaRdyDly;  // Minimum delay before allowing sleep after detecting RdyIn de-asserted.
+_hal_uart_dma.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):    // Use the LSB of the sleep timer (ST0 must be read first anyway) to measure the Rx timeout.
+_hal_uart_dma.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):  CLEAR_SLEEP_MODE();
+_hal_uart_isr.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):    // Use the LSB of the sleep timer (ST0 must be read first anyway).
+_hal_uart_isr.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):    // Use the LSB of the sleep timer (ST0 must be read first anyway).
+_hal_uart_isr_sbl.c (e:\cf\work\ble\ble-cc254_9_46\projects\ble\oadmanager\source):    // Use the LSB of the sleep timer (ST0 must be read first anyway).
+_hal_uart_spi.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):  MRDY/CS = SPI Master Ready to send and serves as a SPI Slave wakeup from sleep.
+_hal_uart_spi.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):  SRDY = SPI Slave Ready to send and serves as a SPI Master wakeup from sleep.
+_hal_uart_spi.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):  The SPI Slave does not re-enter sleep for the following conditions:
+_hal_uart_spi.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):  CLEAR_SLEEP_MODE();
+_hal_uart_spi.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):    CLEAR_SLEEP_MODE();
+_hal_uart_spi.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):    CLEAR_SLEEP_MODE();
+_hal_uart_spi.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):         * awake, so set the spiRxLen to non-zero to prevent the slave from re-entering sleep until
+_hal_uart_spi.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):    CLEAR_SLEEP_MODE();
+_hal_uart_spi.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540eb):  CLEAR_SLEEP_MODE();
+_hal_uart_spi.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):  MRDY/CS = SPI Master Ready to send and serves as a SPI Slave wakeup from sleep.
+_hal_uart_spi.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):  SRDY = SPI Slave Ready to send and serves as a SPI Master wakeup from sleep.
+_hal_uart_spi.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):  The SPI Slave does not re-enter sleep for the following conditions:
+_hal_uart_spi.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):  CLEAR_SLEEP_MODE();
+_hal_uart_spi.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):    CLEAR_SLEEP_MODE();
+_hal_uart_spi.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):    CLEAR_SLEEP_MODE();
+_hal_uart_spi.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):         * awake, so set the spiRxLen to non-zero to prevent the slave from re-entering sleep until
+_hal_uart_spi.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):    CLEAR_SLEEP_MODE();
+_hal_uart_spi.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):  CLEAR_SLEEP_MODE();
+_hal_uart_usb.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb):    // Use the LSB of the sleep timer (ST0 must be read first anyway).
+Hci.h (e:\cf\work\ble\ble-cc254_9_46\components\ble\include): * @brief       This API is used to set this device's Sleep Clock Accuracy.
+Hci.h (e:\cf\work\ble\ble-cc254_9_46\components\ble\include): *              output will be High on Wake, and Low upon entering Sleep. This
+Hci.h (e:\cf\work\ble\ble-cc254_9_46\components\ble\include): * @fn          HCI_EXT_DelaySleepCmd Vendor Specific API
+Hci.h (e:\cf\work\ble\ble-cc254_9_46\components\ble\include): * @brief       This HCI Extension API is used set the sleep delay.
+Hci.h (e:\cf\work\ble\ble-cc254_9_46\components\ble\include):extern hciStatus_t HCI_EXT_DelaySleepCmd( uint16 delay );
+Hci_tl.h (e:\cf\work\ble\ble-cc254_9_46\components\ble\hci):#define HCI_EXT_DELAY_SLEEP                            0xFC1C
+Hci_tl.h (e:\cf\work\ble\ble-cc254_9_46\components\ble\hci):#define HCI_EXT_DELAY_SLEEP_EVENT                      0x041C
+hidAdvRemote.c (e:\cf\work\ble\ble-cc254_9_46\projects\ble\hidadvremote\source):  /* Tell OSAL to not go to sleep because buzzer uses T3 */
+hidAdvRemote.c (e:\cf\work\ble\ble-cc254_9_46\projects\ble\hidadvremote\source):  /* Tell OSAL it's OK to go to sleep */
+Hiddev.h (e:\cf\work\ble\ble-cc254_9_46\projects\ble\profiles\hiddev):#define HID_CONSUMER_SLEEP          50  // 0x32 - Sleep
+Ll.h (e:\cf\work\ble\ble-cc254_9_46\components\ble\controller\include):// Sleep Clock Accuracy (SCA)
+Ll.h (e:\cf\work\ble\ble-cc254_9_46\components\ble\controller\include): * @brief       This API is used to set this device's Sleep Clock Accuracy.
+Ll.h (e:\cf\work\ble\ble-cc254_9_46\components\ble\controller\include): *              flash memory. It is restored on reboot or wake from sleep.
+Ll.h (e:\cf\work\ble\ble-cc254_9_46\components\ble\controller\include): *              output will be High on Wake, and Low upon entering Sleep. This
+Ll.h (e:\cf\work\ble\ble-cc254_9_46\components\ble\controller\include): * @fn          LL_EXT_DelaySleep Vendor Specific API
+Ll.h (e:\cf\work\ble\ble-cc254_9_46\components\ble\controller\include): * @brief       This API is used to to set the sleep delay.
+Ll.h (e:\cf\work\ble\ble-cc254_9_46\components\ble\controller\include):extern llStatus_t LL_EXT_DelaySleep( uint16 delay );
+Ll.h (e:\cf\work\ble\ble-cc254_9_46\components\ble\controller\include): * @param       clockAccuracy - The sleep clock accurracy of the Master. Only
+Ll_sleep.h (e:\cf\work\ble\ble-cc254_9_46\components\ble\controller\include):  Filename:       ll_sleep.h
+Ll_sleep.h (e:\cf\work\ble\ble-cc254_9_46\components\ble\controller\include):                  API's etc. for Sleep Management for the Bluetooth Low Energy
+Ll_sleep.h (e:\cf\work\ble\ble-cc254_9_46\components\ble\controller\include):#ifndef LL_SLEEP_H
+Ll_sleep.h (e:\cf\work\ble\ble-cc254_9_46\components\ble\controller\include):#define LL_SLEEP_H
+Ll_sleep.h (e:\cf\work\ble\ble-cc254_9_46\components\ble\controller\include):// Sleep Management
+Ll_sleep.h (e:\cf\work\ble\ble-cc254_9_46\components\ble\controller\include):#define LL_SLEEP_REQUEST_ALLOWED             0
+Ll_sleep.h (e:\cf\work\ble\ble-cc254_9_46\components\ble\controller\include):#define LL_SLEEP_REQUEST_DENIED              1
+Ll_sleep.h (e:\cf\work\ble\ble-cc254_9_46\components\ble\controller\include):extern NEAR_FUNC void  LL_TimeToNextRfEvent( uint32 *sleepTimer, uint32 *timeout );
+Ll_sleep.h (e:\cf\work\ble\ble-cc254_9_46\components\ble\controller\include):#endif /* LL_SLEEP_H */
+Ll_timer2.h (e:\cf\work\ble\ble-cc254_9_46\components\ble\controller\include)://extern void   llGetFullCTandST( uint32 *coarseTime, uint16 *fineTime, uint32 *sleepTime );
+Ll_timer2.h (e:\cf\work\ble\ble-cc254_9_46\components\ble\controller\include):extern void   llGetFullCTandST( sysTime_t *curTime, uint32 *sleepTime );
+OnBoard.h (e:\cf\work\ble\ble-cc254_9_46\projects\ble\common\cc2540):#include "hal_sleep.h"
+OnBoard.h (e:\cf\work\ble\ble-cc254_9_46\projects\ble\common\cc2540):#define ResetReason() ((SLEEPSTA >> 3) & 0x03)
+OnBoard.h (e:\cf\work\ble\ble-cc254_9_46\projects\ble\common\cc2540):/* sleep macros required by OSAL_PwrMgr.c */
+OnBoard.h (e:\cf\work\ble\ble-cc254_9_46\projects\ble\common\cc2540):#define SLEEP_DEEP                  0             /* value not used */
+OnBoard.h (e:\cf\work\ble\ble-cc254_9_46\projects\ble\common\cc2540):#define SLEEP_LITE                  0             /* value not used */
+OnBoard.h (e:\cf\work\ble\ble-cc254_9_46\projects\ble\common\cc2540):#define MIN_SLEEP_TIME              14            /* minimum time to sleep */
+OnBoard.h (e:\cf\work\ble\ble-cc254_9_46\projects\ble\common\cc2540):#define OSAL_SET_CPU_INTO_SLEEP(m)  halSleep(m)   /* interface to HAL sleep */
+OSAL.c (e:\cf\work\ble\ble-cc254_9_46\components\osal\common): *   events (all tasks), this function puts the processor into Sleep.
+OSAL.c (e:\cf\work\ble\ble-cc254_9_46\components\osal\common):    osal_pwrmgr_powerconserve();  // Put the processor/system into sleep
+OSAL_PwrMgr.c (e:\cf\work\ble\ble-cc254_9_46\components\osal\common): *          HAL sleep manager to enter sleep.
+OSAL_PwrMgr.c (e:\cf\work\ble\ble-cc254_9_46\components\osal\common):      // Put the processor into sleep mode
+OSAL_PwrMgr.c (e:\cf\work\ble\ble-cc254_9_46\components\osal\common):      OSAL_SET_CPU_INTO_SLEEP( next );
+OSAL_PwrMgr.h (e:\cf\work\ble\ble-cc254_9_46\components\osal\include):/* These attributes define sleep beheaver. The attributes can be changed
+OSAL_PwrMgr.h (e:\cf\work\ble\ble-cc254_9_46\components\osal\include): * for each sleep cycle or when the device characteristic change.
+OSAL_PwrMgr.h (e:\cf\work\ble\ble-cc254_9_46\components\osal\include):  uint16 accumulated_sleep_time;
+OSAL_PwrMgr.h (e:\cf\work\ble\ble-cc254_9_46\components\osal\include): * the HAL sleep manager to enter SLEEP LITE state or SLEEP DEEP state.
+OSAL_PwrMgr.h (e:\cf\work\ble\ble-cc254_9_46\components\osal\include):   * to set HAL's power manager sleep state when power saving is entered.
+OSAL_Timers.h (e:\cf\work\ble\ble-cc254_9_46\components\osal\include):   * Set the hardware timer interrupts for sleep mode.
+OSAL_Timers.h (e:\cf\work\ble\ble-cc254_9_46\components\osal\include):  extern void osal_sleep_timers( void );
+OSAL_Timers.h (e:\cf\work\ble\ble-cc254_9_46\components\osal\include):  extern void osal_unsleep_timers( void );
+README.txt (e:\cf\work\ble\ble-cc254_9_46):- Added an HCI Extension command HCI_EXT_DelaySleepCmd which provides the user 
+README.txt (e:\cf\work\ble\ble-cc254_9_46):  control of the system initialization sleep delay (wake time from PM3/boot 
+README.txt (e:\cf\work\ble\ble-cc254_9_46):  before going back to sleep).  The default sleep delay is based on the 
+README.txt (e:\cf\work\ble\ble-cc254_9_46):- When coming out of sleep, the HCI_EXT_ExtendRfRangeCmd would override     
+README.txt (e:\cf\work\ble\ble-cc254_9_46):  implemented, during which time the CC254x will not go into PM2 sleep. This 
+README.txt (e:\cf\work\ble\ble-cc254_9_46):  sleep. In addition to UART, an SPI interface has been added as an option for
+README.txt (e:\cf\work\ble\ble-cc254_9_46):  CC254x remains sleeping properly without unnecessary wake-ups.
+README.txt (e:\cf\work\ble\ble-cc254_9_46):  GPIO line as CC254x device goes in and out of sleep. This command can be 
+README.txt (e:\cf\work\ble\ble-cc254_9_46):	  the exact sleep clock accuracy as any value from 0 to 500 PPM, in
+Sbl_main.c (e:\cf\work\ble\ble-cc254_9_46\projects\ble\util\ebl\app):#include "hal_sleep.h"
+Sbl_main.c (e:\cf\work\ble\ble-cc254_9_46\projects\ble\util\ebl\app):    //if ((SLEEPSTA & 0x10) || !sblWait())
+Sbl_main.c (e:\cf\work\ble\ble-cc254_9_46\projects\ble\util\ebl\app): * @fn          halSleepWait
+Sbl_main.c (e:\cf\work\ble\ble-cc254_9_46\projects\ble\util\ebl\app):void halSleepWait(uint16 duration)
+Sbl_main.c (e:\cf\work\ble\ble-cc254_9_46\projects\ble\util\sbl\app):#include "hal_sleep.h"
+Sbl_main.c (e:\cf\work\ble\ble-cc254_9_46\projects\ble\util\sbl\app):    //if ((SLEEPSTA & 0x10) || !sblWait())
+Sbl_main.c (e:\cf\work\ble\ble-cc254_9_46\projects\ble\util\sbl\app): * @fn          halSleepWait
+Sbl_main.c (e:\cf\work\ble\ble-cc254_9_46\projects\ble\util\sbl\app):void halSleepWait(uint16 duration)
+SensorTag.c (e:\cf\work\ble\ble-cc254_9_46\projects\ble\sensortag\source):      // Put sensor to sleep
+SensorTag.c (e:\cf\work\ble\ble-cc254_9_46\projects\ble\sensortag\source):        // Put sensor to sleep
+SensorTag.c (e:\cf\work\ble\ble-cc254_9_46\projects\ble\sensortag\source):      // All three axes off, put sensor to sleep
+SensorTag.c (e:\cf\work\ble\ble-cc254_9_46\projects\ble\simplebleobserver\sensortag_beacon\source):      // Put sensor to sleep
+SensorTag.c (e:\cf\work\ble\ble-cc254_9_46\projects\ble\simplebleobserver\sensortag_beacon\source):      // Put sensor to sleep
+SensorTag.c (e:\cf\work\ble\ble-cc254_9_46\projects\ble\simplebleobserver\sensortag_beacon\source):      // All three axes off, put sensor to sleep
+SensorTag.c (source):      // Put sensor to sleep
+SensorTag.c (source):      // Put sensor to sleep
+SensorTag.c (source):      // All three axes off, put sensor to sleep
+Ubl_exec.c (e:\cf\work\ble\ble-cc254_9_46\projects\ble\util\ubl\soc_8051\usb_msd\app):  do {  /* Get the sleep timer count; ST0 must be read first & re-read to verify. */\
+Usb_board_cfg.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb\usb\library\cc2540):#define CC2540_IS_XOSC_STABLE()        (SLEEPSTA & XOSC_STB)
+Usb_board_cfg.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb\usb\library\cc2540_hid):#define CC2540_IS_XOSC_STABLE()        (SLEEPSTA & XOSC_STB)
+Usb_board_cfg.h (e:\cf\work\ble\ble-cc254_9_46\projects\ble\util\ubl\soc_8051\usb_msd\hal\usb):#define CC2530_IS_XOSC_STABLE()        (SLEEPSTA & XOSC_STB)
+Usb_framework.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb\usb\library): * \li Enables the USB peripheral unit by setting the \c SLEEP.USB_EN bit
+Usb_framework.h (e:\cf\work\ble\ble-cc254_9_46\projects\ble\util\ubl\soc_8051\usb_msd\hal\usb\library): * \li Enables the USB peripheral unit by setting the \c SLEEP.USB_EN bit
+Usb_reg.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb\usb\library):#define SLEEP_USB_EN                 0x80
+Usb_reg.h (e:\cf\work\ble\ble-cc254_9_46\projects\ble\util\ubl\soc_8051\usb_msd\hal\usb\library):#define SLEEP_USB_EN                 0x80
+Usb_suspend.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb\usb\library\cc2540):          SLEEPCMD = 0x05;
+Usb_suspend.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb\usb\library\cc2540_hid):#include "hal_sleep.h"
+Usb_suspend.c (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb\usb\library\cc2540_hid):    halSleepWait(1000);
+Usb_suspend.c (e:\cf\work\ble\ble-cc254_9_46\projects\ble\util\ubl\soc_8051\usb_msd\hal\usb):        SLEEPCMD = 0x05;
+Usb_suspend.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb\usb\library): *        I/O to minimize power consumption, start the sleep timer etc.) ...
+Usb_suspend.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb\usb\library): *    // interrupts (for instance from I/O ports or the sleep timer) can be used during this period. When
+Usb_suspend.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb\usb\library): *        and peripherals, turn off the sleep timer ...
+Usb_suspend.h (e:\cf\work\ble\ble-cc254_9_46\components\hal\target\cc2540usb\usb\library): *     (e.g. the sleep timer interrupt) by calling \ref usbsuspDoRemoteWakeup(). This function will
+Usb_suspend.h (e:\cf\work\ble\ble-cc254_9_46\projects\ble\util\ubl\soc_8051\usb_msd\hal\usb\library): *        I/O to minimize power consumption, start the sleep timer etc.) ...
+Usb_suspend.h (e:\cf\work\ble\ble-cc254_9_46\projects\ble\util\ubl\soc_8051\usb_msd\hal\usb\library): *    // interrupts (for instance from I/O ports or the sleep timer) can be used during this period. When
+Usb_suspend.h (e:\cf\work\ble\ble-cc254_9_46\projects\ble\util\ubl\soc_8051\usb_msd\hal\usb\library): *        and peripherals, turn off the sleep timer ...
+Usb_suspend.h (e:\cf\work\ble\ble-cc254_9_46\projects\ble\util\ubl\soc_8051\usb_msd\hal\usb\library): *     (e.g. the sleep timer interrupt) by calling \ref usbsuspDoRemoteWakeup(). This function will
