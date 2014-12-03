@@ -165,12 +165,12 @@ bool HalIRTempRead(uint8 *pBuf)
   uint16 v;
   uint16 t;
   bool success;
-
+/*
   if (irtSensorState != TMP006_DATA_READY)
   {
     return FALSE;
   }
-
+*/
   HalIRTempSelect();
   
 
@@ -197,7 +197,7 @@ bool HalIRTempRead(uint8 *pBuf)
   //{
   //  irtSensorState = TMP006_OFF;
   //}
-  //HalDcDcControl(ST_IRTEMP,false);
+  HalDcDcControl(ST_IRTEMP,false);
 
   return success;
 }

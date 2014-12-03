@@ -107,7 +107,7 @@ contact Texas Instruments Incorporated at www.TI.com.
 */
 
 // How often to perform sensor reads (milliseconds)
-#define TEMP_DEFAULT_PERIOD                   1000
+#define TEMP_DEFAULT_PERIOD                   15000
 #define HUM_DEFAULT_PERIOD                    1000
 #define BAR_DEFAULT_PERIOD                    1000
 #define MAG_DEFAULT_PERIOD                    2000
@@ -197,7 +197,7 @@ contact Texas Instruments Incorporated at www.TI.com.
 /*********************************************************************
 * GLOBAL VARIABLES
 */
-
+char temp_count;
 /*********************************************************************
 * EXTERNAL VARIABLES
 */
@@ -287,9 +287,9 @@ static uint8 beaconData[] =
   0x10, //UUID
   0x96, //UUID
   0xe0, //UUID
-  0x00, //Major
+  0x04, //Major
   0x01, //Major
-  0x00, //Minor
+  0x04, //Minor
   0x01, //Minor
   0xc5  //Power
 };
@@ -524,11 +524,11 @@ void SensorTag_Init( uint8 task_id )
   GATTServApp_AddService( GATT_ALL_SERVICES );    // GATT attributes
   DevInfo_AddService();                           // Device Information Service
   IRTemp_AddService (GATT_ALL_SERVICES );         // IR Temperature Service
-  Accel_AddService (GATT_ALL_SERVICES );          // Accelerometer Service
-  Humidity_AddService (GATT_ALL_SERVICES );       // Humidity Service
-  Magnetometer_AddService( GATT_ALL_SERVICES );   // Magnetometer Service
-  Barometer_AddService( GATT_ALL_SERVICES );      // Barometer Service
-  Gyro_AddService( GATT_ALL_SERVICES );           // Gyro Service
+ // Accel_AddService (GATT_ALL_SERVICES );          // Accelerometer Service
+ // Humidity_AddService (GATT_ALL_SERVICES );       // Humidity Service
+ // Magnetometer_AddService( GATT_ALL_SERVICES );   // Magnetometer Service
+ // Barometer_AddService( GATT_ALL_SERVICES );      // Barometer Service
+ // Gyro_AddService( GATT_ALL_SERVICES );           // Gyro Service
   SK_AddService( GATT_ALL_SERVICES );             // Simple Keys Profile
 #if !defined(FEATURE_OAD)
   Test_AddService( GATT_ALL_SERVICES );           // Test Profile
@@ -554,20 +554,20 @@ void SensorTag_Init( uint8 task_id )
   
   // Initialise sensor drivers
   HALIRTempInit();
-  HalHumiInit();
-  HalMagInit();
-  HalAccInit();
-  HalBarInit();
-  HalGyroInit();
-  
+ // HalHumiInit();
+ // HalMagInit();
+ // HalAccInit();
+ // HalBarInit();
+ // HalGyroInit();
+  temp_count = 0;
   // Register callbacks with profile
   VOID IRTemp_RegisterAppCBs( &sensorTag_IrTempCBs );
-  VOID Magnetometer_RegisterAppCBs( &sensorTag_MagnetometerCBs );
-  VOID Accel_RegisterAppCBs( &sensorTag_AccelCBs );
-  VOID Humidity_RegisterAppCBs( &sensorTag_HumidCBs );
-  VOID Barometer_RegisterAppCBs( &sensorTag_BarometerCBs );
-  VOID Gyro_RegisterAppCBs( &sensorTag_GyroCBs );
-  VOID Test_RegisterAppCBs( &sensorTag_TestCBs );
+ // VOID Magnetometer_RegisterAppCBs( &sensorTag_MagnetometerCBs );
+ // VOID Accel_RegisterAppCBs( &sensorTag_AccelCBs );
+ // VOID Humidity_RegisterAppCBs( &sensorTag_HumidCBs );
+ // VOID Barometer_RegisterAppCBs( &sensorTag_BarometerCBs );
+ // VOID Gyro_RegisterAppCBs( &sensorTag_GyroCBs );
+ // VOID Test_RegisterAppCBs( &sensorTag_TestCBs );
   VOID CcService_RegisterAppCBs( &sensorTag_ccCBs );
   #ifdef BEACON_FEATURE
   VOID BcService_RegisterAppCBs( &sensorTag_bcCBs ); 
@@ -730,16 +730,20 @@ uint16 SensorTag_ProcessEvent( uint8 task_id, uint16 events )
   {
     if ( irTempEnabled )
     {
-      if (HalIRTempStatus() == TMP006_DATA_READY)
-      {
+ //     if (HalIRTempStatus() == TMP006_DATA_READY)
+ //     {
         readIrTempData();
-        osal_start_timerEx( sensorTag_TaskID, ST_IRTEMPERATURE_READ_EVT, sensorTmpPeriod-TEMP_MEAS_DELAY );
-      }
+        temp_count++;
+	if(temp_count < 4)
+	{
+          osal_start_timerEx( sensorTag_TaskID, ST_IRTEMPERATURE_READ_EVT, sensorTmpPeriod-TEMP_MEAS_DELAY );
+        }
+ /*     }
       else if (HalIRTempStatus() == TMP006_OFF)
       {
         HalIRTempTurnOn();
         osal_start_timerEx( sensorTag_TaskID, ST_IRTEMPERATURE_READ_EVT, TEMP_MEAS_DELAY );
-      }
+      }*/
     }
     else
     {
